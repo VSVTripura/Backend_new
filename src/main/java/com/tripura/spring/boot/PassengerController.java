@@ -92,10 +92,10 @@ public class PassengerController {
 	}
 	@GetMapping(path="/previousbookings",produces = "application/json")
 	@ResponseBody
-	public JsonOutput findAllBookings(){
+	public JsonOutput findAllBookings(@RequestParam String email){
 		
 		PassengerService ps=new PassengerService();
-		List<Bookings> listOfBookings=	(List<Bookings>)ps.getBookings();
+		List<Bookings> listOfBookings=	(List<Bookings>)ps.getBookings(email);
 		System.out.println(listOfBookings);
 		//List<Bookings> listOfEmployees = (List<Bookings>) passengerRepository.findAll();		
 		JsonOutput json = new JsonOutput();

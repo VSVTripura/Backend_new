@@ -111,7 +111,7 @@ public class PassengerDao {
 	}
 
 	
-	public List<Bookings> getBookings() {
+	public List<Bookings> getBookings(String email) {
 List<Bookings>  bookinglist=new ArrayList<Bookings>();
 	
 	
@@ -126,7 +126,7 @@ List<Bookings>  bookinglist=new ArrayList<Bookings>();
 		System.out.println("Database connected");
 		
 		Statement stmt=(Statement) con.createStatement();
-		ResultSet rs=stmt.executeQuery("select * from bookings");
+		ResultSet rs=stmt.executeQuery("select * from bookings where email='"+email+"'");
 		
 	
 		

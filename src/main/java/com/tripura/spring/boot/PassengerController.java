@@ -108,10 +108,10 @@ public class PassengerController {
 	
 	@GetMapping(path="/viewprofile",produces = "application/json")
 	  
-	  @ResponseBody public JsonOutputProfile findAlldetails(){
+	  @ResponseBody public JsonOutputProfile findAlldetails(@RequestParam String email){
 	  
 	  PassengerService ps=new PassengerService(); 
-	  List<Passenger>listOfdetails= (List<Passenger>)ps.getDetails();
+	  List<Passenger>listOfdetails= (List<Passenger>)ps.getDetails(email);
 	  System.out.println(listOfdetails); 
 	  //List<Bookings> listOfEmployees =(List<Bookings>) passengerRepository.findAll(); 
 	  JsonOutputProfile json = new JsonOutputProfile();

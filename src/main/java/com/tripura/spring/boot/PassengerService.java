@@ -30,10 +30,10 @@ public class PassengerService {
 		return listB;
 	}
 	
-	public List<Passenger> getDetails() {
+	public List<Passenger> getDetails(String email) {
 		
 		PassengerDao pd=new PassengerDao();
-		List<Passenger> list=pd.getDetails();
+		List<Passenger> list=pd.getDetails(email);
 		return list;
 	
 }

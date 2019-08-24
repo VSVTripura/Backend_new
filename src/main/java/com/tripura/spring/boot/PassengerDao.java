@@ -166,7 +166,7 @@ List<Bookings>  bookinglist=new ArrayList<Bookings>();
 }
 	
 	
-	public List<Passenger> getDetails() {
+	public List<Passenger> getDetails(String email) {
 		
 		List<Passenger>  detailslist=new ArrayList<Passenger>();
 			
@@ -181,7 +181,7 @@ List<Bookings>  bookinglist=new ArrayList<Bookings>();
 				
 				System.out.println("Database connected");
 				
-				String email="satyav@gmail.com";
+				//String email="satyav@gmail.com";
 				Statement stmt=(Statement) con.createStatement();
 				ResultSet rs=stmt.executeQuery("select * from passenger where email='"+email+"'");
 				
